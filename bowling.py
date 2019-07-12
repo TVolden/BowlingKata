@@ -12,6 +12,10 @@ class BowlingGame:
         score = 0
         i = 0
         for frame in range(10):
-            score += self._rolls[i] + self._rolls[i + 1]
-            i += 2
+            if self._rolls[i] + self._rolls[i + 1] == 10:
+               score += 10 + self._rolls[i + 2]
+               i += 2
+            else:
+                score += self._rolls[i] + self._rolls[i + 1]
+                i += 2
         return score
