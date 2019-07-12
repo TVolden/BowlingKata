@@ -10,6 +10,8 @@ class BowlingGame:
 
     def score(self):
         score = 0
-        for roll in self._rolls:
-            score += roll
+        i = 0
+        for frame in range(10):
+            score += self._rolls[i] + self._rolls[i + 1]
+            i += 2
         return score
