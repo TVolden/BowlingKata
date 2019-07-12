@@ -14,6 +14,12 @@ class TestBowling(unittest.TestCase):
         self.roll_many(20, 1)
         self.assertEqual(self.game.score(), 20)
 
+    # def test_roll_one_spare(self):
+    #     self.game.roll(5)
+    #     self.game.roll(5)
+    #     self.game.roll(3)
+    #     self.assertEqual(self.game.score(), 16)
+
     def roll_many(self, rolls, pins):
         for roll in range(rolls):
             self.game.roll(pins)
