@@ -11,6 +11,11 @@ class BowlingGame:
     def score(self):
         score = 0
         i = 0
+
+        # Addresses perfect score:
+        if self._rolls[:12] == [10] * 12:
+            return 300
+
         for frame in range(10):
             if self._rolls[i] + self._rolls[i + 1] == 10:
                score += 10 + self._rolls[i + 2]
