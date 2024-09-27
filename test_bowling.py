@@ -19,6 +19,11 @@ class TestBowling(unittest.TestCase):
         self.game.roll(5)
         self.game.roll(3)
         self.assertEqual(self.game.score(), 16)
+    
+    def test_roll_perfect_game(self):
+        for x in range(12):
+            self.game.roll(10)
+        self.assertEqual(self.game.score(), 300)
 
     def roll_many(self, rolls, pins):
         for roll in range(rolls):
